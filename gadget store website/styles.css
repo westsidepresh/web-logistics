@@ -1,0 +1,28 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+section {
+    padding: 20px;
+}
+
+/* Add your additional CSS styles here */
+
