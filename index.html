@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
 
-       .container {
+        .container {
             background-color: #404040; /* Dark grey color */
             display: flex;
             flex-direction: column;
@@ -35,6 +35,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0; /* Remove default margin */
         }
 
         nav ul li {
@@ -133,8 +134,24 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start; /* Align items to the start */
+            }
+
+            nav ul li {
+                display: block; /* Change to block for vertical stacking */
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 10px; /* Add bottom margin for spacing */
+            }
+
+            .video-container {
+                padding-top: 30%; /* Adjust aspect ratio for smaller screens */
+            }
+
             .vehicle {
-                width: calc(100% - 40px);
+                width: 100%; /* Make vehicles occupy full width */
+                max-width: 300px; /* Limit maximum width */
             }
         }
     </style>
@@ -180,7 +197,7 @@
                 <p>Model: Toyota</p>
                 <p>Rental Rate: #75,000/day</p>
                 <button onclick="window.location.href='contact.html'">Book Now</button>
-            </div>
+             </div>
             <div class="vehicle">
                 <img src="truck2.jpg" alt="Truck 2">
                 <h3>Vacuum Truck</h3>
@@ -214,15 +231,15 @@
                 <h3>Armored Vehicle</h3>
                 <p>Model: SUV</p>
                 <p>Rental Rate : #200,00/day</p>
-                <button onclick="window.location.href='contact.html'">Book Now</button>  
-     </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+        </div>
     </section>
     <footer id="contact">
         <h2>Contact Us</h2>
         <p>Phone: +2347035260938</p>
         <p>Email: abikeintegrated@yahoo.com</p>
         <p>Address: 581 Ikwerre Road, Rumigbo, Rivers State, Port Harcourt, Nigeria</p>
-        <!-- Contact form -->
+      <!-- Contact form -->
         <form action="/send_email" method="post">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br>
@@ -236,3 +253,4 @@
 </div>
 </body>
 </html> 
+
