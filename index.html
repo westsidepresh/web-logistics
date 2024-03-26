@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +8,28 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       .container {
+            background-color: #404040; /* Dark grey color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
-            background-color: red;
-            padding: 20px 0;
-            text-align: center;
+            background-color: #8b0000; /* Dark red */
+            padding: 20px;
+            text-align: left;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .company-name {
+            font-family: cursive; /* Changing font to cursive */
         }
 
         nav ul {
@@ -28,11 +44,14 @@
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
         section {
             padding: 20px;
+            flex-grow: 1;
         }
 
         .video-container {
@@ -60,9 +79,15 @@
         .vehicle {
             width: 300px;
             margin: 20px;
-            background-color: #333;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .vehicle:hover {
+            transform: translateY(-5px);
         }
 
         .vehicle img {
@@ -72,101 +97,142 @@
         }
 
         footer {
-            background-color: red;
-            color: white;
-            padding: 20px 0;
+            background-color: #8b0000; /* Dark red */
+            color: #ffffff;
+            padding: 20px;
             text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer form input[type="text"],
+        footer form input[type="email"],
+        footer form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        footer form input[type="submit"] {
+            background-color: #ffffff;
+            color: #8b0000; /* Dark red */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        footer form input[type="submit"]:hover {
+            background-color: #e5e5e5;
+        }
+
+        @media (max-width: 768px) {
+            .vehicle {
+                width: calc(100% - 40px);
+            }
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>Abike Integrated ventures Logistics limited</h1>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#catalog">Catalog</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<section id="home">
-    <h2>Welcome to Abike Integrated ventures Logistics limited</h2>
-    <p>Rent top-quality vehicles for your logistics needs.</p>
-</section>
-<section id="video">
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="your-video.mp4" type="video/mp4">
-            <!-- Add other video formats if needed -->
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</section>
-<section id="catalog">
-    <h2>Vehicle Catalog</h2>
-    <div class="catalog">
-        <div class="vehicle">
-            <img src="truck1.jpg" alt="Truck 1">
-            <h3>hilux</h3>
-            <p>Model: Toyota </p>
-            <p>Rental Rate: #75,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
+<div class="container">
+    <header>
+        <div>
+            <video autoplay loop muted style="height: 300px;">
+                <source src="your-logo-video.mp4" type="video/mp4">
+                <!-- Add other video formats if needed -->
+                Your browser does not support the video tag.
+            </video>
+            <h1 class="company-name">Abike Logistics</h1>
         </div>
-        <div class="vehicle">
-            <img src="truck2.jpg" alt="Truck 2">
-            <h3>vaccum truck</h3>
-            <p>Capacity: 8 tons</p>
-            <p>Rental Rate: #90,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Welcome to Abike Integrated Ventures Logistics Limited</h2>
+        <p>Rent top-quality vehicles for your logistics needs.</p>
+    </section>
+    <section id="video">
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="your-video.mp4" type="video/mp4">
+                <!-- Add other video formats if needed -->
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <div class="vehicle">
-            <img src="car1.jpg" alt="Toyota fortuner">
-            <h3>Fortuner </h3>
-            <p>Model: Toyota ></p>
-            <p>Rental Rate: #50,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
-        </div>
-        <div class="vehicle">
-            <img src="car2.jpg" alt="Car 2">
-            <h3>Firetruck </h3>
-            <p>Model: fire truck</p>
-            <p>Rental Rate: #100,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
-        </div>
-        <div class="vehicle">
-            <img src="car3.jpg" alt="Car 3">
-            <h3>Toyota coaster </h3>
-            <p>Model: fire truck</p>
-            <p>Rental Rate: #120,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
-        </div>
-        <div class="vehicle">
-            <img src="car4.jpg" alt="Car 4">
-            <h3>armored vehicle </h3>
-            <p>Model: SUV </p>
-            <p>Rental Rate: #120,000/day</p>
-            <button onclick="window.location.href='contact.html'">Book Now</button>
-        </div>
-        <!-- Add more vehicles here -->
-    </div>
-</section>
-<footer id="contact">
-    <h2>Contact Us</h2>
-    <p>Phone: +2347035260938</p>
-    <p>Email: abikeintegratedventures@yahoo.com</p>
-    <p>Address: 581 Ikwerre Road, Rumigbo, Rivers State, Port Harcourt, Nigeria</p>
-    <!-- Contact form -->
-    <form action="/send_email" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br>
-        <input type="submit" value="Submit">
-    </form>
-</footer>
+    </section>
+    <section id="catalog">
+        <h2>Vehicle Catalog</h2>
+        <div class="catalog">
+            <div class="vehicle">
+                <img src="truck1.jpg" alt="Truck 1">
+                <h3>Hilux</h3>
+                <p>Model: Toyota</p>
+                <p>Rental Rate: #75,000/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+            <div class="vehicle">
+                <img src="truck2.jpg" alt="Truck 2">
+                <h3>Vacuum Truck</h3>
+                <p>Capacity: 8 tons</p>
+                <p>Rental Rate: #90,000/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+            <div class="vehicle">
+                <img src="car1.jpg" alt="Toyota Fortuner">
+                <h3>Fortuner</h3>
+                <p>Model: Toyota</p>
+                <p>Rental Rate: #50,000/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+            <div class="vehicle">
+                <img src="car2.jpg" alt="Firetruck">
+                <h3>Firetruck</h3>
+                <p>Model: Fire Truck</p>
+                <p>Rental Rate: #100,000/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+            <div class="vehicle">
+                <img src="car3.jpg" alt="Toyota Coaster">
+                <h3>Toyota Coaster</h3>
+                <p>Model: Fire Truck</p>
+                <p>Rental Rate: #120,000/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+            <div class="vehicle">
+                <img src="car4.jpg" alt="Armored Vehicle">
+                <h3>Armored Vehicle</h3>
+                <p>Model: SUV</p>
+                <p>Rental Rate : #200,00/day</p>
+                <button onclick="window.location.href='contact.html'">Book Now</button>  
+     </div>
+    </section>
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: +2347035260938</p>
+        <p>Email: abikeintegrated@yahoo.com</p>
+        <p>Address: 581 Ikwerre Road, Rumigbo, Rivers State, Port Harcourt, Nigeria</p>
+        <!-- Contact form -->
+        <form action="/send_email" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </footer>
+</div>
 </body>
-</html>
-
+</html> 
